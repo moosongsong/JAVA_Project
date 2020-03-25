@@ -1,5 +1,3 @@
-package ÀÔÃâ·Â¿¬½À;
-
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.EOFException;
@@ -12,7 +10,7 @@ import java.io.ObjectOutputStream;
 import java.util.Iterator;
 
 public class Object_IOStream_miniProject_implementAccessable implements Object_IOStream_miniProject_Accessable{
-
+	public static final int BUFFER_SIZE=1024;
 	@Override
 	public void saveSchool(School school, String fileName) throws Exception {
 		BufferedOutputStream bos =null;
@@ -20,14 +18,14 @@ public class Object_IOStream_miniProject_implementAccessable implements Object_I
 		Iterator<Person_ob>it = school.getSchool().iterator();
 		
 		try {
-			bos = new BufferedOutputStream(new FileOutputStream(fileName), 2048);
+			bos = new BufferedOutputStream(new FileOutputStream(fileName), BUFFER_SIZE);
 			oos = new ObjectOutputStream(bos);
 			while(it.hasNext()) {
 				Person_ob temp = it.next();
 				oos.writeObject(temp);
 			}
 			oos.flush();
-			System.out.println("ÆÄÀÏ¿¡ ÀúÀå");
+			System.out.println("íŒŒì¼ì— ì €ì¥");
 		} catch (IOException e) {
 			System.out.println("Fail");
 		}finally {
@@ -48,7 +46,7 @@ public class Object_IOStream_miniProject_implementAccessable implements Object_I
 		
 		try {
 			fis = new FileInputStream(file);
-			bis = new BufferedInputStream(fis, 2048);
+			bis = new BufferedInputStream(fis, BUFFER_SIZE);
 			ois = new ObjectInputStream(bis);
 
 			while(true) {
@@ -58,7 +56,7 @@ public class Object_IOStream_miniProject_implementAccessable implements Object_I
 						school.getSchool().add(person);
 					}
 				} catch (EOFException e) {
-					System.out.println("¸ğµç µ¥ÀÌÅÍ¸¦ ÀĞ¾îµéÀÓ.");
+					System.out.println("ëª¨ë“  ë°ì´í„°ë¥¼ ì½ì–´ë“¤ì„.");
 					break;
 				}
 			}
