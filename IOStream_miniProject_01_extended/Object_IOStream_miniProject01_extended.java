@@ -1,5 +1,3 @@
-package ÀÔÃâ·Â¿¬½À;
-
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.TreeSet;
@@ -145,7 +143,7 @@ class School{
 	}
 	
 	public void showList() {
-		System.out.println("ÇöÀç µî·ÏµÈ ÇĞ»ı¼ö : "+school.size());
+		System.out.println("í˜„ì¬ ë“±ë¡ëœ í•™ìƒìˆ˜ : "+school.size());
 		Iterator<Person_ob> it = school.iterator();
 		while(it.hasNext()) {
 			Person_ob temp = it.next();
