@@ -1,5 +1,3 @@
-package ÀÔÃâ·Â¿¬½À;
-
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.EOFException;
@@ -149,7 +147,7 @@ class School{
 				oos.writeObject(temp);
 			}
 			oos.flush();
-			System.out.println("ÆÄÀÏ¿¡ ÀúÀå");
+			System.out.println("íŒŒì¼ì— ì €ì¥");
 		} catch (IOException e) {
 			System.out.println("Fail");
 		}finally {
@@ -178,7 +176,7 @@ class School{
 						school.add(person);
 					}
 				} catch (EOFException e) {
-					System.out.println("¸ğµç µ¥ÀÌÅÍ¸¦ ÀĞ¾îµéÀÓ.");
+					System.out.println("ëª¨ë“  ë°ì´í„°ë¥¼ ì½ì–´ë“¤ì„.");
 					break;
 				}
 			}
@@ -192,11 +190,11 @@ class School{
 			}
 		}
 		
-		System.out.println("ÆÄÀÏ·ÎºÎÅÍ ÀĞ¾îµéÀÓ");
+		System.out.println("íŒŒì¼ë¡œë¶€í„° ì½ì–´ë“¤ì„");
 	}
 	
 	public void showList() {
-		System.out.println("ÇöÀç µî·ÏµÈ ÇĞ»ı¼ö : "+school.size());
+		System.out.println("í˜„ì¬ ë“±ë¡ëœ í•™ìƒìˆ˜ : "+school.size());
 		Iterator<Person_ob> it = school.iterator();
 		while(it.hasNext()) {
 			Person_ob temp = it.next();
